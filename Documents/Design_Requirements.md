@@ -42,7 +42,8 @@
 
 ## Ideas
 
-Power Management | Program Execution | Data Acquisition | Data Storage | Communications
----------------- | ----------------- | ---------------- | ------------ | --------------
-- | M0 Processor | - | 9DOF IMU | LoRa
-- | - | -| BME280 | APRS
+| Power Management | Program Execution | Data Acquisition | Data Storage | Communications |
+|------------------|-------------------|------------------|--------------|----------------|
+| 3.3 Buck/Boost   | M0 Processor      | BME280           | Micro-SD     | GPS            |
+|                  |                   | 9DOF IMU         | NAND Flash   | APRS           |
+|                  |                   |                  |              |                |

@@ -1,4 +1,4 @@
-##Necessary Functions
+## Necessary Functions
 * Power Management
 
 * Program Execution (Brain)
@@ -9,29 +9,29 @@
 
 * Communications
 
-##Power Management
+## Power Management
 * Battery as source (what voltage?)
 
 * What other voltages do we need? (depends on what is used)
 
 * Can we run the entire circuit off of a single rail? (Ideal scenario)
 
-##Program Execution
+## Program Execution
 * Needs to be Arduino-compatible for new members
 
 * Needs to be able to interface with selected sensors, radios, and memory
 
-##Data Acquisition
+## Data Acquisition
 * IMU
 
 * Pressure/temp/humidity
 
-##Data Storage
+## Data Storage
 * On-board memory vs. micro-SD [needs cost analysis]
 
 * Do not need a large amount of storage
 
-##Communications
+## Communications
 * LoRa
 
 * GPS?
@@ -40,8 +40,9 @@
 
 * What is the minimal required to ensure recovery?
 
-##Ideas
+## Ideas
+
 Power Management | Program Execution | Data Acquisition | Data Storage | Communications
------ | ----- | ----- | ----- | -----
+---------------- | ----------------- | ---------------- | ------------ | --------------
 - | M0 Processor | - | 9DOF IMU | LoRa
 - | - | -| BME280 | APRS

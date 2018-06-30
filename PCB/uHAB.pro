@@ -1,4 +1,4 @@
-update=6/28/2018 11:24:04 PM
+update=6/30/2018 12:09:08 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -59,5 +61,7 @@ LibName29=opto
 LibName30=atmel
 LibName31=contrib
 LibName32=valves
-[general]
-version=1
+LibName33=Custom Libraries/at25dn256
+LibName34=Custom Libraries/m10578-a2
+LibName35=Custom Libraries/radiometrix_hx1
+LibName36=Custom Libraries/txs0108epwr

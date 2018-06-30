@@ -25,11 +25,13 @@ Dependencies: In order to choose power system components, the total nominal powe
 * Communications: 140mA at 5V
 * Other: LEDs (x3) 30-60mA at 5V
 
-Total 5V: **170-200mA**
+Total 5V: **170-200mA** 
 
 Total 3.3V: **150mA**
 
 Conclusion: Linear regulators able to supply at least an amp should be more than enough to supply the needs of µHAB while also allowing for plenty of current to be drawn peripherally. Based on the extremely low cost, bouuntiful protection features, and a flight-proven mission at IREC, the LDL1117 regulators are a strong choice.
+
+**Note:** The 3.3V is generated from the 5V. This means that whatever load is on the 3.3V rail is also passing through the 5V rail. This is designed purposely to make the 3.3V as stable as possible for the microcontroller and also allow the board to be powered through a USB connection without using additional regulators and diode-OR circuitry. 
 
 5V Generation: [LDL1117S50R ($0.45)](https://www.digikey.com/product-detail/en/stmicroelectronics/LDL1117S50R/497-17240-1-ND/7102080).
 > 1.2A output at a fixed 5V
@@ -89,6 +91,8 @@ The current choice is the ARM Cortex-M7: [Digikey Link - $11.98](https://www.dig
 >144-LQFP (20x20) Package Size (Solderable by hand with proper equipment)
 
 As stated earlier, if the total cost of this system is over $100, then this can be scaled back. However, the design will proceed forward with the intention of using this component. 
+
+In order to meet the requirement of being 5V-tolerant with digital I/O, then level shifters are required. The cheapest level shifter available that can adequetely link 3.3V logic levels to 5V logic levels is the [296-23011-1-ND	 ($1.66 each)](https://www.digikey.com/product-detail/en/texas-instruments/TXS0108EPWR/296-23011-1-ND/1775304). It is estimated that at least three of these will be needed in order to cover the amount of level-shifting necessary in order to make µHAB compatible with Arduino shields. 
 
 ## Data Storage
 The storage decision is a relatively easy one because it effectively comes down to cost. Large amounts of storage are not necessary for a successful HAB mission and so only a smalll amount is required for µHAB. The requirements are: 
@@ -170,5 +174,24 @@ Note: Each stage (when active) will illuminate a red LED to indicate that it is 
 ## Remove Before Flight
 The remove before flight mechanism may look like a lot of different things when it is hooked up on the external of the HAB. Maybe it is like rocketry with a lock and key that connects a circuit when turned. Maybe it looks like a pin that needs to be pulled in order to allow two conductive terminals to touch each other. Regardless of the external mechanism, the remove before flight connection to this PCB will allow a circuit to be connected and enable power to flow to the controller. In the event that this functionality is not desired, a jumper resistor can be placed between two pads. If the remove before flight functionality is needed for future helmets, then it can be accessed through two pins on the headers.
 
+## Connectors
 
+* Battery Input: Board-Mount [DF22R-2P-7.92DS(05) ($0.81)](https://www.digikey.com/product-detail/en/hirose-electric-co-ltd/DF22R-2P-7.92DS-05/H10706-ND/1025057) with mate [DF22R-2S-7.92C(28) ($0.30)](https://www.digikey.com/product-detail/en/hirose-electric-co-ltd/DF22R-2S-7.92C-28/H1615-ND/510248) and terminals [DF22-1416SCF ($0.26)](https://www.digikey.com/product-detail/en/hirose-electric-co-ltd/DF22-1416SCF/H2788CT-ND/365031).
 
+* Programming (USB Micro Type B): [UJ2-MIBH-4-SMT-TR ($1.05)](https://www.digikey.com/product-detail/en/cui-inc/UJ2-MIBH-4-SMT-TR/102-4006-1-ND/6187928). 
+
+* Remove Before Flight: Board-Mount [5-103635-1 ($0.89)](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/5-103635-1/A33856-ND/1122420) with mate [104257-1 ($0.40)](https://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=265238941&uq=636659037948777764) and terminals [1-104480-7 ($0.17)](https://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=265238950&uq=636659037948777764).
+
+* Cutdown: 
+
+## LEDs
+
+* Red:
+* Blue:
+* Green:
+
+## Other Parts
+
+* Polyfuse (500mA): [0ZCJ0025AF2E ($0.13)](https://www.digikey.com/product-detail/en/bel-fuse-inc/0ZCJ0025AF2E/507-1799-1-ND/4156322).
+
+* Remove Before Flight Selectibility: Header Pins [M20-9990346 ($0.15)](https://www.digikey.com/product-detail/en/harwin-inc/M20-9990346/952-2264-ND/3728228) and Jumper [STC02SYAN ($0.10)](https://www.digikey.com/product-detail/en/sullins-connector-solutions/STC02SYAN/S9000-ND/76372).

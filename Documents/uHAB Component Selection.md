@@ -69,7 +69,7 @@ The selection for this component is one of the most difficult because there are 
 * 5V-tolerant pins are a plus
 	>Without 5V tolerant pins, level-shifters should be looked into for each digital pin for COTS Arduino shield compatibility
 
-The current choice is the ARM Cortex-M7: [Digikey Link - $11.98](https://www.digikey.com/product-detail/en/microchip-technology/ATSAMV70Q20B-AABT/ATSAMV70Q20B-AABT-CT-ND/7644979) which features:
+The current choice is the ARM Cortex-M7: [Digikey Link - $11.98](https://www.digikey.com/product-detail/en/microchip-technology/ATSAMV71Q20B-AABT/ATSAMV71Q20B-AABT-CT-ND/7644981) which features:
 >32-Bit instruction set
 
 >300MHz clock
@@ -186,9 +186,9 @@ The remove before flight mechanism may look like a lot of different things when 
 
 ## LEDs
 
-* Red:
-* Blue:
-* Green:
+* Red: [LTST-C190KRKT ($0.27)](https://www.digikey.com/product-detail/en/lite-on-inc/LTST-C190KRKT/160-1436-1-ND/386816).
+* Blue: [LTST-C191TBKT ($0.52)](https://www.digikey.com/product-detail/en/lite-on-inc/LTST-C191TBKT/160-1647-1-ND/573587).
+* Green: [LTST-C194KGKT ($0.41)](https://www.digikey.com/product-detail/en/lite-on-inc/LTST-C194KGKT/160-1834-1-ND/2356230).
 
 ## Other Parts
 

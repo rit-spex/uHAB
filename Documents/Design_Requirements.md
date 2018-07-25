@@ -1,24 +1,28 @@
 ## Purpose
-The purpose of μHAB is to provide an affordable, accessible, and expandable platform that contains all of the basic necessary functionality for a high-altitude balloon mission.
+The purpose of μHAB is to provide a flexible, expandable, and affordable platform that contains all of the necessary functionality for a high-altitude balloon mission without the hassle of starting a completely new design from scratch. 
 
-* Affordability: μHAB will contain only the components needed for a mission. Extra functionality will be available in the form of additional modules called "helmets".
-* Accessible: μHAB may be programmed through the Arduino IDE and abstraction layer or through the native _______ toolchain. It is also completely open-source with components that are easily reworkable.
-* Expandable: The layout of the PCB mimics that of the common Arduino Mega so that COTS Arduino shields may be utilized. 
+* Flexible: μHAB contains a wealth of available I/O that is broken out to easily accessible headers. Both 5V and 3.3V digital pins are available for ease of future component integrations. The powerful 300MHz, 32-bit microcontroller has capabilities for CANbus, EBI/EMI, Ethernet, I²C, IrDA, LINbus, MMC/SD/SDIO, QSPI, SPI, SSC, UART/USART, USB, x24 16-bit ADC (With oversampling), and x2 12-bit DAC. μHAB also features selection headers for multiple types of antennas and remove before flight behavior. 
+
+* Expandable: The layout of the PCB includes the familiar pinout of the common Arduino Mega so that commercial Arduino shields may be utilized. Additional I/O is available separately. The microcontroller selected offers enough processing power to handle many more additional tasks and the available power supply allows for some limited draw for future expansion modules called "helmets". 
+
+* Affordable: μHAB will contain only the components necessary for a successful mission as outlined below. Extra functionality will be available in the form of completely separate additional helmets" as needed. By reducing the functionality to a minimum, µHAB lowers the overall costs associated for a HAB launch and allows for more expansion. 
 
 ## Necessary Functions
 * Power Management
 
-* Program Execution (Brain)
+* Program Execution
 
-* Data Storage (Memory)
+* Data Storage
 
-* Positioning (GPS)
+* Positioning
 
 * Communications
 
 * Cutdown
 
 * Remove Before Flight
+
+* User Feedback
 
 ## Power Management
 * Battery as source 

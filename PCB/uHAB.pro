@@ -1,4 +1,4 @@
-update=6/30/2018 12:09:08 PM
+update=7/24/2018 8:50:21 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -65,3 +65,4 @@ LibName33=Custom Libraries/at25dn256
 LibName34=Custom Libraries/m10578-a2
 LibName35=Custom Libraries/radiometrix_hx1
 LibName36=Custom Libraries/txs0108epwr
+LibName37=Custom Libraries/atsamv71q20b-aabt

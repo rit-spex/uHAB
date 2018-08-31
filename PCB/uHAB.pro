@@ -1,4 +1,4 @@
-update=7/24/2018 8:50:21 PM
+update=8/29/2018 9:19:47 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -66,3 +66,8 @@ LibName34=Custom Libraries/m10578-a2
 LibName35=Custom Libraries/radiometrix_hx1
 LibName36=Custom Libraries/txs0108epwr
 LibName37=Custom Libraries/atsamv71q20b-aabt
+LibName38=Custom Libraries/si4464-b1b-fm
+LibName39=Custom Libraries/as2133-92lf
+LibName40=Custom Libraries/kt2016k26000bcw18zas
+LibName41=Custom Libraries/maap-011232-tr0500
+LibName42=Custom Libraries/SMA

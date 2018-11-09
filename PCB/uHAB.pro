@@ -1,4 +1,4 @@
-update=8/29/2018 9:19:47 PM
+update=9/20/2018 9:57:02 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=Custom Libraries
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -71,3 +71,5 @@ LibName39=Custom Libraries/as2133-92lf
 LibName40=Custom Libraries/kt2016k26000bcw18zas
 LibName41=Custom Libraries/maap-011232-tr0500
 LibName42=Custom Libraries/SMA
+LibName43=Custom Libraries/lt3433
+LibName44=Custom Libraries/ltc3112

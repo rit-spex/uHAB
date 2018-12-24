@@ -17,9 +17,9 @@ Power designs can range from being extremely simple systems to complex systems w
 
 Dependencies: In order to choose power system components, the total nominal power consumption should first be known. Because of this, specific components cannot be chosen until the rest of the components have been selected.
 
-**Nominal Power Draw Estimations**
+**Worst Case Current Estimations**
 
-* Microcontroller: Estimating 100mA at 3.3V
+* Microcontroller: Worst case 300mA during startup (@ 3.3V - Datasheet pg. 138)
 * Data Storage: 6mA Active Current at 3.3V
 * GPS: 31mA max at 3.3V
 * Communications: 140mA at 5V
@@ -48,9 +48,21 @@ Conclusion: Linear regulators able to supply at least an amp should be more than
 > Operating Temperatures from -40°C ~ 125°C
 
 ## Program Execution
-The selection for this component is one of the most difficult because there are so many options to choose from that meet the design requirements. The general plan for component selection with this part is to overshoot a bit in terms of processing power and then scale back if the total cost of components rises above 100 dollars. Having this added processing power lends immensely to the total expandability of µHAB. To reiterate the design requirements, the microcontrollers functions are:
+[Quick link for documentation](https://www.microchip.com/wwwproducts/en/ATSAM3X8E#additional-features)
 
-* Arduino-Programmable (This is something that will need to be handled with software at a later date)
+The selection for this component is one of the most difficult because there are so many options to choose from that meet the design requirements as well as a large spectrum that controls which direction the project will flow in. On one hand, a very simple implementation of the Arduino Uno's ATmega328P can be utilized since the base requirements for this board are simple, the Arduino bootloader and supporting infrastructure can be utilized, and the cost will be significantly reduced. The tradeoff in this scenario is that additional processing resources will need to be added with certain helmets that require additional processing power or if the system because too large.
+
+On the other hand, a system-on-chip like the SmartFusion2 can be utilized which can run micro Linux and have a wealth of available options and interfaces. The tradeoff here is that complexity is vastly increased, the Arduino bootloader and supporting infrastructure cannot be used, and cost is substantially increased.
+
+Based on the overarching design goals for this project, it seems that a middle-of-the selection is the most ideal. Therefore, the optimal selection would have:
+
+* Extra GPIO available for additional helmets
+* Enough processing power to run additional circuitry without having to add more computing resoures
+* Arduino-compatible so that the entire board is more accessible to a wider-range of individuals
+
+To reiterate the design requirements, the microcontrollers functions are:
+
+* Arduino-Programmable (Arduino bootloader available for the selected microcontroller)
 
 * I2C, SPI, UART, CAN, USB interfaces
 
@@ -64,33 +76,33 @@ The selection for this component is one of the most difficult because there are 
 
 * I/O >= 86
 
-* ADC >= 16 and at least 10-bit
+* ADC >= 16 count and at least 10-bit
 
-* 5V-tolerant pins are a plus
+* 5V-tolerant GPIO
 	>Without 5V tolerant pins, level-shifters should be looked into for each digital pin for COTS Arduino shield compatibility
 
-The current choice is the ARM Cortex-M7: [Digikey Link - $11.98](https://www.digikey.com/product-detail/en/microchip-technology/ATSAMV71Q20B-AABT/ATSAMV71Q20B-AABT-CT-ND/7644981) which features:
+The selected component is the ARM® Cortex®-M3 SAM3X Microcontroller: [Digikey Link - $11.54](https://www.digikey.com/product-detail/en/microchip-technology/ATSAM3X8EA-AU/ATSAM3X8EA-AU-ND/3128687) which features:
 >32-Bit instruction set
 
->300MHz clock
+>84MHz clock
 
->EBI/EMI, I²C, IrDA, LINbus, MMC/SD/SDIO, SPI, UART/USART, USB Interfaces
+>CANbus, EBI/EMI, Ethernet, I²C, IrDA, LINbus, Memory Card, SPI, SSC, UART/USART, USB Interfaces
 
 >Brown-out Detect/Reset, DMA, I²S, POR, PWM, WDT Peripherals
 
->114 I/O
+>103 I/O
 
->1 MB Flash
+>512 KB Flash
 
->384K RAM
+>100K RAM
 
->24 12-bit ADCs
+>16 12-bit ADCs
 
->3.3V Logic Levels (Would need level shifting)
+>3.3V Logic Levels (Will need level shifting)
 
 >144-LQFP (20x20) Package Size (Solderable by hand with proper equipment)
 
-As stated earlier, if the total cost of this system is over $100, then this can be scaled back. However, the design will proceed forward with the intention of using this component.
+This microcontroller is the same used in the Arduino Due board which means that there will be an available bootloader for it. It features enough extra GPIO and computing power to handle the basic functionality of µHAB as well as having plenty left over for future helmets that will be integrated into the system.
 
 In order to meet the requirement of being 5V-tolerant with digital I/O, then level shifters are required. The cheapest level shifter available that can adequetely link 3.3V logic levels to 5V logic levels is the [296-23011-1-ND	 ($1.66 each)](https://www.digikey.com/product-detail/en/texas-instruments/TXS0108EPWR/296-23011-1-ND/1775304). It is estimated that at least three of these will be needed in order to cover the amount of level-shifting necessary in order to make µHAB compatible with Arduino shields.
 

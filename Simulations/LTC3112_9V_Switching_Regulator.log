@@ -1,4 +1,4 @@
-Circuit: * C:\Users\danda\Desktop\Projects\SPEX\uHAB\Simulations\LTC3112_9V_Switching_Regulator.asc
+Circuit: * C:\Users\danda\Desktop\Projects\uHAB\Simulations\LTC3112_9V_Switching_Regulator.asc
 
 Direct Newton iteration for .op point succeeded.
 Ignoring empty pin current: Ix(u1:6)
@@ -11,23 +11,3 @@ Ignoring empty pin current: Ix(u1:10)
 Ignoring empty pin current: Ix(u1:11)
 Ignoring empty pin current: Ix(u1:13)
 Ignoring empty pin current: Ix(u1:16)
-Heightened Def Con from 0.00442302 to 0.00442302
-
-Date: Sat Nov 03 00:14:48 2018
-Total elapsed time: 137.442 seconds.
-
-tnom = 27
-temp = 27
-method = modified trap
-totiter = 8510972
-traniter = 8510963
-tranpoints = 2758428
-accept = 2054118
-rejected = 704311
-matrix size = 79
-fillins = 12
-solver = Normal
-Thread vector: 8.2/6.7[4] 5.1/2.8[4] 1.4/1.1[2] 0.2/0.5[1]  2592/500
-Matrix Compiler1: 2.89 KB object code size  0.9/0.6/[0.3]
-Matrix Compiler2: 4.74 KB object code size  0.4/0.9/[0.4]
-
